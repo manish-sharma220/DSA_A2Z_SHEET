@@ -72,17 +72,66 @@ public class p6 {
     }
 }
 
-/*
- * zigzag traversal matlb jaise hum log lever order traversal mai level by level
- * traverse kr rhe the or har leve mai left se right jaa rhe the lekin zigzag
- * traversal mai hame level by level zana hai lekin hame left to right or right
- * to left alternatively zana hai to pehle hum ek nasted arraylist lenege uske
- * baad agr root null hota hai to return krdenege arraylist ko uske baad ek q
- * banayenge usme root dalanenge or phir left se right a right se left se print
- * kb print krna hai uske lia ek flag naam ke variable lenege usme agr tru hai
- * to left to right or false hai tpo right to left uske baad normal level order
- * traversal krenge lekin hr ek iteration ke baad hme check krna hai ki kya flag
- * false hai agr false hai to ans ko reverse krke final ans mai add krna hai agr
- * nhi hai to normal ans ko final ans mai add krna hai or dusra level ke lia
- * flag ko change krna hai
- */
+// Zigzag traversal means that instead of doing a normal level-order traversal
+// where we move from left to right at every level, we need to traverse level by
+// level alternating between left to right and right to left.
+
+// Step-by-step Explanation
+// Nested ArrayList for the Result
+
+// We take a nested ArrayList to store the final zigzag order traversal.
+
+// Handling Edge Case
+
+// If the root is null, we simply return the empty result list.
+
+// Using a Queue for Level Order Traversal
+
+// We use a queue (Q) to store the nodes, just like in normal level-order
+// traversal.
+
+// Initially, we add the root node to the queue.
+
+// Using a Flag for Direction Control
+
+// We introduce a boolean flag (flag), which helps determine whether we should
+// traverse left to right or right to left at each level.
+
+// If flag = true, we traverse left to right.
+
+// If flag = false, we traverse right to left.
+
+// Traversing Level by Level
+
+// We perform a normal level-order traversal using a loop.
+
+// For each level:
+
+// We store the elements of the level in a temporary list (ans).
+
+// If flag == false, we reverse the list before adding it to the final answer.
+
+// Otherwise, we add it as it is.
+
+// Toggling the Flag
+
+// After processing each level, we flip the flag (flag = !flag) to change the
+// direction for the next level.
+
+// Additional Clarification
+// This technique helps in problems where we need a zigzag (or spiral) pattern,
+// making it different from a regular level-order traversal.
+
+// Time Complexity:
+// 𝑂
+// (
+// 𝑁
+// )
+// O(N) since each node is processed once.
+
+// Space Complexity:
+// 𝑂
+// (
+// 𝑁
+// )
+// O(N) for storing the final answer and queue.
